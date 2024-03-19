@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "datafactoryincrementalload"
+		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://storage22001.dfs.core.windows.net"
+		},
+		"AzureKeyVaulttoADF_properties_typeProperties_baseUrl": {
+			"value": "https://keyvaultsincremental.vault.azure.net/"
+		},
+		"storageevent_properties_typeProperties_scope": {
+			"value": "/subscriptions/7aa64674-fa44-4861-867b-78c40d8e8a14/resourceGroups/resource22001/providers/Microsoft.Storage/storageAccounts/storage22001"
+		},
+		"triggerincrement_properties_pipeline_parameters_windowStartTime": {
+			"value": "@trigger().outputs. windowStartTime"
+		},
+		"triggerincrement_properties_pipeline_parameters_windowEndTime": {
+			"value": "@trigger().outputs. windowEndTime"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
