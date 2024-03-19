@@ -1,5 +1,5 @@
 {
-	"name": "pipelineinc",
+	"name": "incremental loading using trigger tumbling",
 	"properties": {
 		"activities": [
 			{
