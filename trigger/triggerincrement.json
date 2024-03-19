@@ -1,0 +1,36 @@
+{
+	"name": "triggerincrement",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipeline": {
+			"pipelineReference": {
+				"referenceName": "pipelineinc",
+				"type": "PipelineReference"
+			},
+			"parameters": {
+				"windowStartTime": {
+					"type": "Expression",
+					"value": "@trigger().outputs. windowStartTime"
+				},
+				"windowEndTime": {
+					"type": "Expression",
+					"value": "@trigger().outputs. windowEndTime"
+				}
+			}
+		},
+		"type": "TumblingWindowTrigger",
+		"typeProperties": {
+			"frequency": "Minute",
+			"interval": 5,
+			"startTime": "2024-03-14T15:51:00Z",
+			"delay": "00:00:00",
+			"maxConcurrency": 1,
+			"retryPolicy": {
+				"count": 1,
+				"intervalInSeconds": 30
+			},
+			"dependsOn": []
+		}
+	}
+}

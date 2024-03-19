@@ -1,0 +1,9 @@
+{
+	"name": "datafactoryincrementalload",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "9c9be364-09ac-4bfa-829f-5bba2b216b58",
+		"tenantId": "17f1a87e-2a25-4eaa-b9df-9d439034b080"
+	}
+}
