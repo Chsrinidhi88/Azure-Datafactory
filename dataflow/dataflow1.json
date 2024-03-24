@@ -27,6 +27,7 @@
 				"     validateSchema: true,",
 				"     ignoreNoFilesFound: true,",
 				"     moveFiles: ['','archiev'],",
+				"     wildcardPaths:['*.csv'],",
 				"     partitionBy('hash', 1)) ~> source1",
 				"source1 sink(allowSchemaDrift: false,",
 				"     validateSchema: true,",
