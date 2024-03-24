@@ -1,0 +1,44 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "rawin",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "processedin",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(allowSchemaDrift: false,",
+				"     validateSchema: true,",
+				"     ignoreNoFilesFound: true,",
+				"     moveFiles: ['','archiev'],",
+				"     partitionBy('hash', 1)) ~> source1",
+				"source1 sink(allowSchemaDrift: false,",
+				"     validateSchema: true,",
+				"     input(",
+				"          meta as (data_version as string, created as string, revision as integer)",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
+			]
+		}
+	}
+}
